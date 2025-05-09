@@ -1,0 +1,1091 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="hexapod_description">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.25741157484729 -1.0286661826181 -0.143644685777147"
+        rpy="0 0 0" />
+      <mass
+        value="0.406550708950941" />
+      <inertia
+        ixx="0.00140186277369694"
+        ixy="-3.22683837089394E-09"
+        ixz="-9.08398049417608E-08"
+        iyy="0.0026076460512639"
+        iyz="4.90426096706267E-09"
+        izz="0.00139672166947923" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod_description/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.749019607843137 0.749019607843137 0.749019607843137 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod_description/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="1A_link">
+    <inertial>
+      <origin
+        xyz="-0.00430144539199429 -0.0431962401648959 -0.00819637049698341"
+        rpy="0 0 0" />
+      <mass
+        value="0.0263699506965405" />
+      <inertia
+        ixx="9.36700075571395E-06"
+        ixy="-6.24230776056585E-07"
+        ixz="-8.07146351827189E-08"
+        iyy="3.3914421062322E-06"
+        iyz="-6.99491205793862E-07"
+        izz="9.25188012768261E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod_description/meshes/1A_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.109803921568627 0.109803921568627 0.109803921568627 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod_description/meshes/1A_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="1A_joint"
+    type="revolute">
+    <origin
+      xyz="-0.25962 -1.0213 -0.26955"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="1A_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="1B_link">
+    <inertial>
+      <origin
+        xyz="-0.101488980585065 -0.00941192663074447 -0.00405439831780366"
+        rpy="0 0 0" />
+      <mass
+        value="0.0393326464255885" />
+      <inertia
+        ixx="6.96671471490739E-06"
+        ixy="-9.31508134060528E-06"
+        ixz="-1.08412476919522E-05"
+        iyy="7.7528803460487E-05"
+        iyz="-2.00640280941175E-06"
+        izz="7.68949533623692E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod_description/meshes/1B_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.749019607843137 0.749019607843137 0.749019607843137 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod_description/meshes/1B_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="1B_joint"
+    type="revolute">
+    <origin
+      xyz="-0.0063327 -0.075236 -0.003549"
+      rpy="1.5708 0.84229 1.4857" />
+    <parent
+      link="1A_link" />
+    <child
+      link="1B_link" />
+    <axis
+      xyz="0.00033224 0.00037237 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="1C_link">
+    <inertial>
+      <origin
+        xyz="-0.0213269908695684 0.0183128557548677 -0.02937271110645"
+        rpy="0 0 0" />
+      <mass
+        value="0.0544820458081966" />
+      <inertia
+        ixx="1.31203766486637E-05"
+        ixy="1.82389688906698E-07"
+        ixz="-5.30985742026611E-06"
+        iyy="5.93409800560478E-05"
+        iyz="1.3395164345661E-07"
+        izz="6.51966815234158E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod_description/meshes/1C_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.647058823529412 0.647058823529412 0.647058823529412 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod_description/meshes/1C_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="1C_joint"
+    type="revolute">
+    <origin
+      xyz="-0.16257 -0.017506 -0.02728"
+      rpy="1.5703 0 2.4131" />
+    <parent
+      link="1B_link" />
+    <child
+      link="1C_link" />
+    <axis
+      xyz="0 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="2A_link">
+    <inertial>
+      <origin
+        xyz="-0.0382690273529725 -0.0205356621657206 -0.00819621090390599"
+        rpy="0 0 0" />
+      <mass
+        value="0.0263699508381414" />
+      <inertia
+        ixx="4.67233543015658E-06"
+        ixy="-2.53042568379074E-06"
+        ixz="-6.25586570659638E-07"
+        iyy="8.0861022511898E-06"
+        iyz="-3.23130818507157E-07"
+        izz="9.25188533691811E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod_description/meshes/2A_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod_description/meshes/2A_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="2A_joint"
+    type="revolute">
+    <origin
+      xyz="-0.36753 -1.0213 -0.20467"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="2A_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="2B_link">
+    <inertial>
+      <origin
+        xyz="0.0971031270180314 0.0308474718809424 0.00609990630132101"
+        rpy="0 0 0" />
+      <mass
+        value="0.0393326465544564" />
+      <inertia
+        ixx="1.35269679138386E-05"
+        ixy="-2.38232906446587E-05"
+        ixz="6.65936411387239E-06"
+        iyy="6.99745889813088E-05"
+        iyz="3.0695940919057E-06"
+        izz="7.78889146752166E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod_description/meshes/2B_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.749019607843137 0.749019607843137 0.749019607843137 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod_description/meshes/2B_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="2B_joint"
+    type="revolute">
+    <origin
+      xyz="-0.068306 -0.032169 -0.0035499"
+      rpy="-1.5708 -1.0606 -2.7029" />
+    <parent
+      link="2A_link" />
+    <child
+      link="2B_link" />
+    <axis
+      xyz="0.032866 0.05873 -0.99773" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="2C_link">
+    <inertial>
+      <origin
+        xyz="0.0293806057479058 0.018629703306252 0.0323192592402626"
+        rpy="0 0 0" />
+      <mass
+        value="0.0544820458081965" />
+      <inertia
+        ixx="6.51966756600767E-05"
+        ixy="1.33951434376191E-07"
+        ixz="-5.30988623235352E-06"
+        iyy="5.934098004187E-05"
+        iyz="1.82389895367432E-07"
+        izz="1.31203825261801E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod_description/meshes/2C_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.956862745098039 0.956862745098039 0.956862745098039 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod_description/meshes/2C_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="2C_joint"
+    type="revolute">
+    <origin
+      xyz="0.16412 0.045526 0.022943"
+      rpy="-1.5708 -0.067352 1.0606" />
+    <parent
+      link="2B_link" />
+    <child
+      link="2C_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="3A_link">
+    <inertial>
+      <origin
+        xyz="-0.0307610400192623 0.0306572182304927 -0.0081960590797332"
+        rpy="0 0 0" />
+      <mass
+        value="0.0263699508271743" />
+      <inertia
+        ixx="6.39324394487179E-06"
+        ixy="3.05226530591364E-06"
+        ixz="-4.90748280995827E-07"
+        iyy="6.36518889388827E-06"
+        iyz="5.04885281284885E-07"
+        izz="9.25189018321899E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod_description/meshes/3A_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod_description/meshes/3A_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="3A_joint"
+    type="revolute">
+    <origin
+      xyz="-0.36532 -1.0213 -0.07879"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="3A_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="3B_link">
+    <inertial>
+      <origin
+        xyz="0.0993355257729009 0.0184802096010506 -0.0209994211383605"
+        rpy="0 0 0" />
+      <mass
+        value="0.039332646556227" />
+      <inertia
+        ixx="1.10025794334447E-05"
+        ixy="-1.46917218941522E-05"
+        ixz="1.57384199602732E-05"
+        iyy="7.56759997534425E-05"
+        iyz="3.99203943277034E-06"
+        izz="7.47118923839114E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod_description/meshes/3B_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.749019607843137 0.749019607843137 0.749019607843137 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod_description/meshes/3B_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="3B_joint"
+    type="revolute">
+    <origin
+      xyz="-0.060496 0.045175 -0.0035497"
+      rpy="-1.5708 -1.1557 2.4987" />
+    <parent
+      link="3A_link" />
+    <child
+      link="3B_link" />
+    <axis
+      xyz="-0.051301 -0.1164 -0.99188" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="3C_link">
+    <inertial>
+      <origin
+        xyz="-0.0323193260991097 -0.0184710843825772 -0.029379780123943"
+        rpy="0 0 0" />
+      <mass
+        value="0.0544820458081966" />
+      <inertia
+        ixx="1.31203766485226E-05"
+        ixy="1.8235980806292E-07"
+        ixz="-5.30985844587833E-06"
+        iyy="5.93409815638197E-05"
+        iyz="1.3398459541582E-07"
+        izz="6.51966800157847E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod_description/meshes/3C_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.647058823529412 0.647058823529412 0.647058823529412 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod_description/meshes/3C_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="3C_joint"
+    type="revolute">
+    <origin
+      xyz="0.16875 0.027774 -0.011985"
+      rpy="1.4434 0 -0.41512" />
+    <parent
+      link="3B_link" />
+    <child
+      link="3C_link" />
+    <axis
+      xyz="0 -1 0.00011568" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="4A_link">
+    <inertial>
+      <origin
+        xyz="0.00426880069282332 0.0432205441125846 -0.00819610407146887"
+        rpy="0 0 0" />
+      <mass
+        value="0.0263699506960539" />
+      <inertia
+        ixx="9.36791249177577E-06"
+        ixy="-6.19851767279143E-07"
+        ixz="8.01977333492911E-08"
+        iyy="3.39052185355754E-06"
+        iyz="6.99514180621509E-07"
+        izz="9.25188864414194E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod_description/meshes/4A_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.109803921568627 0.109803921568627 0.109803921568627 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod_description/meshes/4A_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="4A_joint"
+    type="revolute">
+    <origin
+      xyz="-0.2552 -1.0213 -0.017762"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="4A_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="4B_link">
+    <inertial>
+      <origin
+        xyz="0.0905445107142794 0.0434857196750638 -0.02516745539809"
+        rpy="0 0 0" />
+      <mass
+        value="0.0393326464251206" />
+      <inertia
+        ixx="2.36809165464089E-05"
+        ixy="-2.85840753485145E-05"
+        ixz="1.59216654329467E-05"
+        iyy="6.40371623746895E-05"
+        iyz="8.90166911550024E-06"
+        izz="7.36723926165177E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod_description/meshes/4B_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.749019607843137 0.749019607843137 0.749019607843137 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod_description/meshes/4B_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="4B_joint"
+    type="revolute">
+    <origin
+      xyz="-0.004393 0.075374 -0.0035497"
+      rpy="-1.5708 -1.2114 1.6278" />
+    <parent
+      link="4A_link" />
+    <child
+      link="4B_link" />
+    <axis
+      xyz="-0.049746 -0.13238 -0.98995" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="4C_link">
+    <inertial>
+      <origin
+        xyz="-0.0323192748658534 -0.0195384262588668 -0.0293792848069352"
+        rpy="0 0 0" />
+      <mass
+        value="0.0544820458081967" />
+      <inertia
+        ixx="1.31203766485371E-05"
+        ixy="1.82294955411605E-07"
+        ixz="-5.30986067282842E-06"
+        iyy="5.93409848375694E-05"
+        iyz="1.34056114700107E-07"
+        izz="6.51966767420207E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod_description/meshes/4C_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.647058823529412 0.647058823529412 0.647058823529412 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod_description/meshes/4C_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="4C_joint"
+    type="revolute">
+    <origin
+      xyz="0.15545 0.070709 -0.017273"
+      rpy="1.429 0 -0.35944" />
+    <parent
+      link="4B_link" />
+    <child
+      link="4C_link" />
+    <axis
+      xyz="0 -1 6.0305E-05" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="5A_link">
+    <inertial>
+      <origin
+        xyz="0.0395643604596855 0.0179135886715664 -0.0081962757402918"
+        rpy="0 0 0" />
+      <mass
+        value="0.026369950689219" />
+      <inertia
+        ixx="4.34809169647214E-06"
+        ixy="-2.27838032710256E-06"
+        ixz="6.45915734671922E-07"
+        iyy="8.41034824515683E-06"
+        iyz="2.80317046793669E-07"
+        izz="9.25188305286107E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod_description/meshes/5A_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.109803921568627 0.109803921568627 0.109803921568627 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod_description/meshes/5A_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="5A_joint"
+    type="revolute">
+    <origin
+      xyz="-0.14729 -1.0213 -0.082616"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="5A_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="5B_link">
+    <inertial>
+      <origin
+        xyz="0.0892782370099755 0.0492805743330506 0.000964559999765417"
+        rpy="0 0 0" />
+      <mass
+        value="0.0393326465545752" />
+      <inertia
+        ixx="2.4907854799112E-05"
+        ixy="-3.25248838919093E-05"
+        ixz="7.56302281658607E-06"
+        iyy="5.90502322621108E-05"
+        iyz="5.26793697293835E-06"
+        izz="7.7432384509045E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod_description/meshes/5B_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.749019607843137 0.749019607843137 0.749019607843137 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod_description/meshes/5B_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="5B_joint"
+    type="revolute">
+    <origin
+      xyz="0.069335 0.029885 -0.0035501"
+      rpy="-1.5708 -1.2548 0.40578" />
+    <parent
+      link="5A_link" />
+    <child
+      link="5B_link" />
+    <axis
+      xyz="0.010235 0.031305 -0.99946" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="5C_link">
+    <inertial>
+      <origin
+        xyz="-0.0252321364745935 0.0182030671537343 -0.0356475558231237"
+        rpy="0 0 0" />
+      <mass
+        value="0.0544820458081967" />
+      <inertia
+        ixx="1.77649069733346E-05"
+        ixy="1.49284858414154E-07"
+        ixz="-1.57636576032856E-05"
+        iyy="5.93409800402224E-05"
+        iyz="1.70067910014357E-07"
+        izz="6.05521512145703E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod_description/meshes/5C_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.956862745098039 0.956862745098039 0.956862745098039 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod_description/meshes/5C_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="5C_joint"
+    type="revolute">
+    <origin
+      xyz="0.1527 0.078405 -0.020579"
+      rpy="1.603 -0.0070889 -0.099179" />
+    <parent
+      link="5B_link" />
+    <child
+      link="5C_link" />
+    <axis
+      xyz="0 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="6A_link">
+    <inertial>
+      <origin
+        xyz="0.0352726838200648 -0.0253391194409003 -0.00819640907936225"
+        rpy="0 0 0" />
+      <mass
+        value="0.0263699508281299" />
+      <inertia
+        ixx="5.42693961246221E-06"
+        ixy="2.8999385739154E-06"
+        ixz="5.65351503200154E-07"
+        iyy="7.33150461518476E-06"
+        iyz="-4.197475323486E-07"
+        izz="9.25187879439742E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod_description/meshes/6A_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.109803921568627 0.109803921568627 0.109803921568627 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod_description/meshes/6A_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="6A_joint"
+    type="revolute">
+    <origin
+      xyz="-0.1495 -1.0213 -0.2085"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="6A_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="6B_link">
+    <inertial>
+      <origin
+        xyz="-0.0839540774980974 0.0155108057205954 0.0578591884879405"
+        rpy="0 0 0" />
+      <mass
+        value="0.0393326465581174" />
+      <inertia
+        ixx="2.62433999117515E-05"
+        ixy="8.10792018363522E-06"
+        ixz="3.3187848243088E-05"
+        iyy="7.74269511371596E-05"
+        iyz="-4.42368785269008E-06"
+        izz="5.77201205220344E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod_description/meshes/6B_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.956862745098039 0.956862745098039 0.956862745098039 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod_description/meshes/6B_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="6B_joint"
+    type="revolute">
+    <origin
+      xyz="0.070372 -0.031996 -0.003549"
+      rpy="0 0.1431 2.4997" />
+    <parent
+      link="6A_link" />
+    <child
+      link="6B_link" />
+    <axis
+      xyz="-0.032178 0.99947 -0.0046377" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="6C_link">
+    <inertial>
+      <origin
+        xyz="-0.0213321148677508 0.0182794505490415 -0.0293747760636241"
+        rpy="0 0 0" />
+      <mass
+        value="0.0544820458081965" />
+      <inertia
+        ixx="1.31203766484413E-05"
+        ixy="1.82015435160741E-07"
+        ixz="-5.3098702613139E-06"
+        iyy="5.93409989676805E-05"
+        iyz="1.34364367586715E-07"
+        izz="6.51966626120049E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod_description/meshes/6C_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.647058823529412 0.647058823529412 0.647058823529412 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hexapod_description/meshes/6C_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="6C_joint"
+    type="revolute">
+    <origin
+      xyz="-0.13678 0.037162 0.090718"
+      rpy="0.032483 -1.4277 3.1416" />
+    <parent
+      link="6B_link" />
+    <child
+      link="6C_link" />
+    <axis
+      xyz="0 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+</robot>
