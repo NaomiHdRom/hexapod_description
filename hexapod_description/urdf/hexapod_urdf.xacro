@@ -1,0 +1,230 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro" name="hexapod">
+
+ 
+  
+  <xacro:property name="base_mass" value="1.0"/>
+  <xacro:property name="link_mass" value="0.2"/>
+  <xacro:property name="link_inertia" value="0.001"/>
+
+  
+
+ 
+  <material name="Grey">
+    <color rgba="0.5 0.5 0.5 1"/>
+  </material>
+
+
+  <link name="base_link">
+    <inertial>
+      <mass value="${base_mass}"/>
+      <origin xyz="-2.16623615156841E-08 -1.86474001004355E-07 0.0398545694412631" rpy="0 0 0"/>
+      <inertia ixx="0.00140041843016966" ixy="-2.31249740438415E-06" ixz="2.39569958983405E-10"
+               iyy="0.00139816601300651" iyz="-5.86573676030292E-09"
+               izz="0.00260764605126391"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh
+          filename="package://hexapod_description/meshes/base_link.STL" />
+      </geometry>
+      <material name="Grey"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh
+          filename="package://hexapod_description/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <xacro:macro name="leg" params="prefix xA yA zA xB yB zB xC yC zC 
+                                        axisAx axisBx axisCx
+                                        axisAy axisBy axisCy                                     
+                                        axisAz axisBz axisCz
+                                        stlA_path stlB_path stlC_path   
+                                        lowerA lowerB lowerC
+                                        upperA upperB upperC    
+                                        "                                    
+                                        >
+
+    <link name="${prefix}_linkA">
+      <inertial>
+        <mass value="${link_mass}"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <inertia ixx="${link_inertia}" ixy="0.0" ixz="0.0"
+                 iyy="${link_inertia}" iyz="0.0"
+                 izz="${link_inertia}"/>
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh
+          filename="${stlA_path}" />
+      </geometry>
+        <material name="Grey"/>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh
+          filename="${stlA_path}" />
+      </geometry>
+      </collision>
+    </link>
+
+    <joint name="${prefix}_jointA" type="revolute">
+      <origin xyz="${xA} ${yA} ${zA}" rpy="0 0 -0.54114"/>
+      <parent link="base_link"/>
+      <child link="${prefix}_linkA"/>
+      <axis xyz="${axisAx} ${axisAy} ${axisAz}"/>
+      <limit effort="1.0" lower="${lowerA}" upper="${upperA}" velocity="1.0"/>
+    </joint>
+
+    
+    <link name="${prefix}_linkB">
+      <inertial>
+        <mass value="${link_mass}"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <inertia ixx="${link_inertia}" ixy="0.0" ixz="0.0"
+                 iyy="${link_inertia}" iyz="0.0"
+                 izz="${link_inertia}"/>
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh
+          filename="${stlB_path}" />
+      </geometry>
+        <material name="Grey"/>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh
+          filename="${stlB_path}" />
+      </geometry>
+      </collision>
+    </link>
+
+  
+    <joint name="${prefix}_jointB" type="revolute">
+      <origin xyz="${xB} ${yB} ${zB}" rpy="0 0 0"/>
+      <parent link="${prefix}_linkA"/>
+      <child link="${prefix}_linkB"/>
+      <axis xyz="${axisBx} ${axisBy} ${axisBz}"/>
+      <limit effort="1.0" lower="${lowerB}" upper="${upperB}" velocity="1.0"/>
+    </joint>
+
+    <link name="${prefix}_linkC">
+      <inertial>
+        <mass value="${link_mass}"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <inertia ixx="${link_inertia}" ixy="0.0" ixz="0.0"
+                 iyy="${link_inertia}" iyz="0.0"
+                 izz="${link_inertia}"/>
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh
+          filename="${stlC_path}" />
+      </geometry>
+        <material name="Grey"/>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh
+          filename="${stlC_path}" />
+      </geometry>
+      </collision>
+    </link>
+
+   
+    <joint name="${prefix}_jointC" type="revolute">
+      <origin xyz="${xC} ${yC} ${zC}" rpy="0 0 0"/>
+      <parent link="${prefix}_linkB"/>
+      <child link="${prefix}_linkC"/>
+      <axis xyz="${axisCx} ${axisCy} ${axisCz}"/>
+      <limit effort="1.0" lower="${lowerC}" upper="${upperC}" velocity="1.0"/>
+    </joint>
+  </xacro:macro>
+
+
+  <xacro:leg prefix="leg1" xA="-0.066747"                  yA="-0.10678"                zA="0.03165"
+                           xB="-0.00760490724250368"       yB="-0.0751266443986717"     zB="-0.00269900311088156"
+                           xC="-0.016997"                  yC="-0.12029"                zC="0.12064"
+                           axisAx="0"                      axisAy="0"                   axisAz="1"
+                           axisBx="-0.996338495646665"     axisBy="0.0854962109391992"  axisBz="0"
+                           axisCx="-0.99634"               axisCy="0.085496"            axisCz="0"
+                           lowerA="-1.5708"                lowerB="-2.96706"            lowerC="-0.872665"
+                           upperA="1.5708"                 upperB="1.74533"             upperC="2.96706" 
+                           stlA_path="package://hexapod_description/meshes/1A_link.STL"
+                           stlB_path="package://hexapod_description/meshes/1B_link.STL"
+                           stlC_path="package://hexapod_description/meshes/1C_link.STL"
+  />
+  <xacro:leg prefix="leg2" xA="-0.12585"                   yA="0.0044155"               zA="0.03165"
+                           xB="-0.0665963742689142"        yB="-0.0355912800079509"     zB="-0.00269872535340721"
+                           xC="-0.10904"                   yC="-0.052825"               zC="0.121"
+                           axisAx="0"                      axisAy="0"                   axisAz="1"
+                           axisBx="-0.484736668052907"     axisBy="0.874660141213748"   axisBz="0"
+                           axisCx="-0.4847"                axisCy="0.87466"             axisCz="0"
+                           lowerA="-1.5708"                lowerB="-2.96706"            lowerC="-0.872665"
+                           upperA="1.5708"                 upperB="1.74533"             upperC="2.96706" 
+                           stlA_path="package://hexapod_description/meshes/2A_link.STL"
+                           stlB_path="package://hexapod_description/meshes/2B_link.STL"
+                           stlC_path="package://hexapod_description/meshes/2C_link.STL"
+  />
+  <xacro:leg prefix="leg3" xA="-0.059099"                  yA="0.11119"                 zA="0.03165"
+                           xB="-0.0533873782981206"        yB="0.0533996389354673"      zB="-0.00269846185166944"
+                           xC="-0.062549"                  yC="0.069952"                zC="0.14324"
+                           axisAx="0"                      axisAy="0"                   axisAz="1"
+                           axisBx="0.696443909967172"      axisBy="0.717611231983724"   axisBz="0"
+                           axisCx="0.69644"                axisCy="0.71761"             axisCz="0"
+                           lowerA="-1.5708"                lowerB="-2.96706"            lowerC="-0.872665"
+                           upperA="1.5708"                 upperB="1.74533"             upperC="2.96706" 
+                           stlA_path="package://hexapod_description/meshes/3A_link.STL"
+                           stlB_path="package://hexapod_description/meshes/3B_link.STL"
+                           stlC_path="package://hexapod_description/meshes/3C_link.STL"
+  />
+  <xacro:leg prefix="leg4" xA="0.066747"                   yA="0.10678"                 zA="0.03165"
+                           xB="0.00755197903724675"        yB="0.0751319969361967"      zB="-0.00269854049076024"
+                           xC="0.016913"                   yC="0.12032"                 zC="0.12066"
+                           axisAx="0"                      axisAy="0"                   axisAz="1"
+                           axisBx="0.996395716648548"      axisBy="-0.084826740105107"  axisBz="0"
+                           axisCx="0.9964"                 axisCy="-0.084827"           axisCz="0"
+                           lowerA="-1.5708"                lowerB="-2.96706"           lowerC="-0.872665"
+                           upperA="1.5708"                 upperB="1.74533"             upperC="2.96706" 
+                           stlA_path="package://hexapod_description/meshes/4A_link.STL"
+                           stlB_path="package://hexapod_description/meshes/4B_link.STL"
+                           stlC_path="package://hexapod_description/meshes/4C_link.STL"
+  />
+  <xacro:leg prefix="leg5" xA="0.12585"                    yA="-0.0044158"              zA="0.03165"
+                           xB="0.0688275229088763"         yB="0.0310583245155329"      zB="-0.00269883901400592"
+                           xC="0.11251"                    yC="0.045505"                zC="0.1208"
+                           axisAx="0"                      axisAy="0"                   axisAz="1"
+                           axisBx="0.425192570892761"      axisBy="-0.905102909972711"  axisBz="0"
+                           axisCx="0.42519"                axisCy="-0.9051"             axisCz="0"
+                           lowerA="-1.5708"                lowerB="-2.96706"            lowerC="-0.87"
+                           upperA="1.5708"                 upperB="1.74533"             upperC="2.96706" 
+                           stlA_path="package://hexapod_description/meshes/5A_link.STL"
+                           stlB_path="package://hexapod_description/meshes/5B_link.STL"
+                           stlC_path="package://hexapod_description/meshes/5C_link.STL" 
+  />
+  <xacro:leg prefix="leg6" xA="0.0590987552322091"         yA="-0.111193"                zA="0.03165"
+                           xB="0.0612532738303673"         yB="-0.0441574849800916"      zB="-0.0026990706223573"
+                           xC="0.095967"                   yC="-0.075088"                zC="0.1203"
+                           axisAx="0"                      axisAy="0"                    axisAz="1"
+                           axisBx="-0.572319986773635"     axisBy="-0.820030385252709"   axisBz="0"
+                           axisCx="-0.57232"               axisCy="-0.82003"             axisCz="0"
+                           lowerA="-1.5708"                lowerB="-2.96706"             lowerC="-0.87"
+                           upperA="1.5708"                 upperB="1.74533"              upperC="2.96706" 
+                           stlA_path="package://hexapod_description/meshes/6A_link.STL"
+                           stlB_path="package://hexapod_description/meshes/6B_link.STL"
+                           stlC_path="package://hexapod_description/meshes/6C_link.STL"
+  />
+
+</robot>
